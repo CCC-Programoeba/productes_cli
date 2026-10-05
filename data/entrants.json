@@ -1,0 +1,216 @@
+[
+    {
+        "id": "ENT01",
+        "name": "Amanida mediterrània",
+        "description": "Enciam, tomàquet, cogombre, olives, formatge feta i vinagreta.",
+        "tipus": "amanides",
+        "allergens": [
+            "Llet"
+        ],
+        "price": 9,
+        "calories": 220,
+        "dietType": [
+            "Sense gluten",
+            "Vegetarià"
+        ],
+        "additionalInfo": "Fresca i lleugera.",
+        "img": "img/amanida_mediterrania.png"
+    },
+    {
+        "id": "ENT02",
+        "name": "Amanida de quinoa i verdures",
+        "description": "Quinoa, espinacs, pebrot, ceba morada i alvocat.",
+        "tipus": "amanides",
+        "allergens": [],
+        "price": 8.5,
+        "calories": 300,
+        "dietType": [
+            "Vegà",
+            "Sense gluten"
+        ],
+        "additionalInfo": "Una opció nutritiva i lleugera.",
+        "img": "img/amanida_quinoa_verdures.png"
+    },
+    {
+        "id": "ENT03",
+        "name": "Amanida caprese",
+        "description": "Tomàquet, mozzarella fresca, alfàbrega i oli d'oliva extra verge.",
+        "tipus": "amanides",
+        "allergens": [
+            "Llet"
+        ],
+        "price": 6.5,
+        "calories": 200,
+        "dietType": [
+            "Sense gluten",
+            "Vegetarià"
+        ],
+        "additionalInfo": "Fresca i lleugera.",
+        "img": "img/amanida_caprese.png"
+    },
+    {
+        "id": "ENT04",
+        "name": "Tartar de tonyina",
+        "description": "Tartar fresc de tonyina amb alvocat, llavors de sèsam i salsa de soja.",
+        "tipus": "tartars",
+        "allergens": [
+            "Peix",
+            "Sèsam"
+        ],
+        "price": 7.5,
+        "calories": 200,
+        "dietType": [
+            "Sense gluten",
+            "Baja en carbohidrats"
+        ],
+        "additionalInfo": "Rica en omega 3.",
+        "img": "img/tartar_tonyina.png"
+    },
+    {
+        "id": "ENT05",
+        "name": "Tartar de salmó",
+        "description": "Salmó fresc amb alvocat, llavors de sèsam i salsa teriyaki.",
+        "tipus": "tartars",
+        "allergens": [
+            "Peix",
+            "Sèsam"
+        ],
+        "price": 8,
+        "calories": 180,
+        "dietType": [
+            "Sense gluten"
+        ],
+        "additionalInfo": "Proteïna saludable per començar.",
+        "img": "img/tartar_salmo.png"
+    },
+    {
+        "id": "ENT06",
+        "name": "Tartar de verdures",
+        "description": "Tartar fresc de cogombre, alvocat, tomàquet i ceba morada.",
+        "tipus": "tartars",
+        "allergens": [],
+        "price": 5.5,
+        "calories": 180,
+        "dietType": [
+            "Vegà",
+            "Sense gluten"
+        ],
+        "additionalInfo": "Lleuger i fresc.",
+        "img": "img/tartar_verdures.png"
+    },
+    {
+        "id": "ENT07",
+        "name": "Rotllets vietnamites",
+        "description": "Rollitos d'arròs farcits de verdures fresques i salsa de cacauet.",
+        "tipus": "rotllets",
+        "allergens": [
+            "Cacauet",
+            "Gluten"
+        ],
+        "price": 7,
+        "calories": 230,
+        "dietType": [
+            "Vegà"
+        ],
+        "additionalInfo": "Edat de l'orient més saludable.",
+        "img": "img/rollets_vietnamites.png"
+    },
+    {
+        "id": "ENT08",
+        "name": "Rotllets de primavera",
+        "description": "Rotllets d'arròs farcits amb verdures i salsa de soja.",
+        "tipus": "rotllets",
+        "allergens": [
+            "Sèsam"
+        ],
+        "price": 6,
+        "calories": 200,
+        "dietType": [
+            "Vegà",
+            "Sense gluten"
+        ],
+        "additionalInfo": "Frescos i lleugers.",
+        "img": "img/rollitos_primavera.png"
+    },
+    {
+        "id": "ENT09",
+        "name": "Hummus clàssic",
+        "description": "Hummus casolà amb pa de pita i verdures fresques.",
+        "tipus": "altres",
+        "allergens": [
+            "Gluten",
+            "Llet"
+        ],
+        "price": 5,
+        "calories": 250,
+        "dietType": [
+            "Vegà"
+        ],
+        "additionalInfo": "Ideal per a picoteig saludable.",
+        "img": "img/hummus_classic.png"
+    },
+    {
+        "id": "ENT10",
+        "name": "Guacamole amb nachos",
+        "description": "Guacamole fresc fet amb alvocat madur i servit amb nachos cruixents.",
+        "tipus": "altres",
+        "allergens": [
+            "Gluten"
+        ],
+        "price": 6,
+        "calories": 300,
+        "dietType": [
+            "Vegà"
+        ],
+        "additionalInfo": "Un clàssic mexicà amb un toc saludable.",
+        "img": "img/guacamole_nachos.png"
+    },
+    {
+        "id": "ENT11",
+        "name": "Pà de pita amb hummus",
+        "description": "Pita calenta acompanyada de hummus casolà.",
+        "tipus": "altres",
+        "allergens": [
+            "Gluten"
+        ],
+        "price": 4.5,
+        "calories": 220,
+        "dietType": [
+            "Vegà"
+        ],
+        "additionalInfo": "Ideal per a vegans.",
+        "img": "img/pa_pita_hummus.png"
+    },
+    {
+        "id": "ENT12",
+        "name": "Bruschetta de tomàquet",
+        "description": "Pa torrat amb tomàquet fresc, all i oli d'oliva.",
+        "tipus": "altres",
+        "allergens": [
+            "Gluten"
+        ],
+        "price": 4,
+        "calories": 150,
+        "dietType": [
+            "Vegà"
+        ],
+        "additionalInfo": "Fresca i deliciosa.",
+        "img": "img/bruschetta_tomaquet.png"
+    },
+    {
+        "id": "ENT13",
+        "name": "Carpaccio de vedella",
+        "description": "Carpaccio de vedella acompanyat de rúcula, parmesà i oli d'oliva.",
+        "tipus": "altres",
+        "allergens": [
+            "Llet"
+        ],
+        "price": 9.5,
+        "calories": 250,
+        "dietType": [
+            "Sense gluten"
+        ],
+        "additionalInfo": "Una opció sofisticada per a carnívors.",
+        "img": "img/carpaccio_vedella.png"
+    }
+]

@@ -1,0 +1,5 @@
+name: productes_cli
+description: Carta de productes — pràctica didàctica.
+version: 1.0.0
+environment:
+  sdk: ">=3.3.0 <4.0.0"
