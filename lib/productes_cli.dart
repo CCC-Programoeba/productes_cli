@@ -1,30 +1,31 @@
-// Els imports es faran servir en completar el TODO.
-// ignore_for_file: unused_import
+import 'data/repositories/productes_repository.dart';
 import 'domain/entities/entrant.dart';
-import 'dart:convert';
-import 'dart:io';
+//import 'dart:convert';        ya no hace falta al ser trabajo del repositorio
+//import 'dart:io';             ya no hace falta al ser trabajo del repositorio
 
-/// En aquesta primera versió, App encara assumeix la lectura del fitxer.
+// estams en Pràctica 02
 class App {
-  List<Entrant> llistaEntrants = []; // Iniciada vacía
 
-  void carregar() {
+  List<Entrant> llistaEntrants = []; // Iniciada vacía
+  final repository = ProductesRepository();   // Iniciada una instancia
+
+  /*void carregar() {
     final contingut = File('data/entrants.json')
         .readAsStringSync(); //'contingut' es una var final tipo String que contiene entrants.json leído como string.
     final dades = jsonDecode(
         contingut); //convierte el string de contingut a algo legible, lo 'traduce' para que dart lo entiuenda
     llistaEntrants = (dades
-            as List) // El jsonDecode en dades rellena a llistaEntrants
-        .map((element) => Entrant.fromJson(element as Map<
-            String, // .map() transforma cada Map en un entrant
-            dynamic>)) // 'mappea' el json, lo traduce ya a algo legible para si mismo, por tanto ya entiende que el primer elementeo json es Entran 01, el 2º el 02, y etc
-        // y => Entrant.fromJson(etc...) es POR CADA element, sacame un Entrant con los datos .fromJson
+            as List) // dades se lee como List; cada Map de esa lista se transforma
+        // con "Entrant.fromJson(element as Map<String, dynamic>)" en un objeto Entrant
+        .map((element) => Entrant.fromJson(element as Map<String, dynamic>))
         .toList();
-
     //throw UnimplementedError("P1: lectura i creació d’entitats");
+  }*/
+
+  Future <void> carregar() async { //Pràctica 02    ahora void va entre <> porque...si
+    llistaEntrants = await repository.obtenirProductes();   //se espera a que llegue la respuesta
   }
 
-  /// La consola decideix el format; l'entitat no conté colors ni print.
   void mostrarLlistaProductes() {
     // 'list'
     for (final entrant in llistaEntrants) {
@@ -32,7 +33,6 @@ class App {
     }
   }
 
-  /// Cerquem per identificador sense confondre'l amb la posició en la llista.
   void mostrarInfoProducte(String id) {
     // 'show ENTXX'
     for (final entrant in llistaEntrants) {
@@ -53,9 +53,3 @@ class App {
     print('No s’ha trobat cap producte amb ID $id');
   }
 }
-
-// ¿Qué sabe todavía App sobre el archivo?
-// App ha creado en llistaEntrants todo del archivo, para no consuktarlo a cada vez
-
-// Si cambiamos el origen de los datos, qué clase habría que modificar?
-// class App, la funcion carregar

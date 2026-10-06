@@ -1,7 +1,4 @@
-// Els imports es faran servir en completar el TODO.
-// ignore_for_file: unused_import
-/// Representa un entrant de la carta, independentment del seu origen.
-/// Conservem tots els camps del JSON original; el format de pantalla va en App.
+// 
 class Entrant {
   final String id;
   final String name;
@@ -29,7 +26,6 @@ class Entrant {
 
   /// Primera aproximació: el model encara coneix les claus del JSON.
   /// En la pràctica 3 traslladarem aquesta conversió a la capa de dades.
-  /// TODO P1: convertir cada camp del mapa en un argument del constructor.
 
   factory Entrant.fromJson(Map<String, dynamic> json) {
     // Hacemos un Map de un String-> donde las claves son texto:'id','name'...dynamic->los valores pueden ser de distintos tipos
