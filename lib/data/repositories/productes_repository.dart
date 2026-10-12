@@ -1,25 +1,31 @@
-import 'dart:convert';
-import 'dart:io';
+//import 'dart:convert';   ahoras olo importamos packages de dentro de nuestor propio proyecto
+//import 'dart:io';
 import 'package:productes_cli/domain/entities/entrant.dart';
+import 'package:productes_cli/data/services/fitxer_service.dart';
+import 'package:productes_cli/data/mappers/entrant_mapper.dart';
+import 'package:productes_cli/data/services/api_service.dart'; //la API
 
 class ProductesRepository {
-  Future<List<Entrant>> obtenirProductes() async {
-    //al añair el Future '<>'abraza tmbién el List
 
-    // await Future<void>.delayed(Duration(seconds: 2)); // pra al prubea al simular la carga
-    final contingut = await File('data/entrants.json')
-        .readAsString(); //al añadir el 'await' no es necesario el sync en readAsStringSyn
-    final dades = jsonDecode(contingut);
-    final llistaEntrants = (dades as List)  // dades se lee como List; cada Map de esa lista se transforma
-        .map((element) => Entrant.fromJson(element as Map<String, dynamic>)).toList();    
-                  // con "Entrant.fromJson(element as Map<String, dynamic>)" en un objeto Entrant, y a una lsita
-                  // de objetos 'Entrant' guardad en 'llistaEntrants'
+  final fitxerService = FitxerService();
+
+  Future<List<Entrant>> obtenirProductes() async {
+
+/** Comentamos o descomentamos la linea siguiente. No es necesario aqui lo del enunciado
+ * de poner el usarapi = true/false
+ */
+
+    //final dades = await fitxerService         //usando el fichero de dentro de neustras carpetas
+    final dades = await apiService          //camviado a la API para la prueba
+        .llegirProductes(); //llamada a llegirProductes de la calse fitxerServide
+
+    final llistaEntrants = dades //cada map
+        .map(mapEntrant) //lo mappea pasando entrnant_mapper.dart
+        .toList(); //y me devuelve un Entrant a lalista de entrants
 
     return llistaEntrants;
-
-    //throw UnimplementedError();
-    //lo dewjo de momento por si acaso
   }
-}
 
+  final apiService = ApiService(Uri.parse('https://healthys-express-backend-production.up.railway.app/api/entrants'));
 
+} /*ProductesRepository   > fitxerService.llegirProductes()   ->    List<Map<String, dynamic>>  ->  .map(mapEntrant)  ->  List<Entrant>*/

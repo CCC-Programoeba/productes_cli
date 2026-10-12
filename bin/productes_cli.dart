@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:productes_cli/productes_cli.dart';
+import 'package:productes_cli/productes_cli.dart';  //ésto es válido gracias a la buena nomenclatura en el pubspec.yaml
 
 Future <void> main(List<String> arguments) async {    //Future <void>...async
   final ordre = arguments.isEmpty ? '' : arguments.first;
@@ -24,10 +24,25 @@ Future <void> main(List<String> arguments) async {    //Future <void>...async
     exitCode = 1;
   }
 }
-/**Entramos por bin/prpductes.dart
- * Si los args son validos, nos lleva a app, donde 
- * con 'carregar', mediante ProductesRepository, leemos el json y lo
- * convierto en una list de maps, de objetos 'Entrant'
- * Una vez cargado, ejectua el 'show' o el 'list', segun le hayamos dicho
+
+/**
+ * Recorregut complet d'una consulta HTTP fins a la pantalla:
+ * 
+ * La HTTP empieza en App, que pide los productos a ProductesRepository. 
+ * ProductesRepository llama a ApiService.llegirProductes(). 
+ * ApiService hace una petición GET con http.Client, que recibe la respuesta en bytes y la convierte a texto mediante UTF-8.
+ * Después jsonDecode transforma el JSON en una lista de mapas.
+ * El repositorio recibe esos mapas y utiliza mapEntrant para convertir cada uno en un objeto Entrant.
+ * Finalmente, App guarda la lista de Entrant y la muestra por pantalla.
+ */
+
+/**Capturas de pantalla guardadas de momento de los distintos errrores con los fallos
+ * deliberados en la URL
+ */
+
+/**Expliqueu quina classe encara decideix l'origen i per què voldríem prendre aquesta decisió des del programa principa
+ * 
+ * class ProductesRepository es ahora la encargada de decidir (si comentamos/descomentamos una linea u otra)
+ * Seria preferible hacerlo desde un menu principal y que el user elija el origen
  * 
  */

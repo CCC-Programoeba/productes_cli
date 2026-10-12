@@ -1,4 +1,6 @@
 // 
+
+
 class Entrant {
   final String id;
   final String name;
@@ -24,8 +26,7 @@ class Entrant {
       this.additionalInfo,
       this.img});
 
-  /// Primera aproximació: el model encara coneix les claus del JSON.
-  /// En la pràctica 3 traslladarem aquesta conversió a la capa de dades.
+  /*    Anulamos ésta al no ser ya encesarrioa
 
   factory Entrant.fromJson(Map<String, dynamic> json) {
     // Hacemos un Map de un String-> donde las claves son texto:'id','name'...dynamic->los valores pueden ser de distintos tipos
@@ -46,6 +47,6 @@ class Entrant {
       img: json['img'] as String?,
     );
 
-    // throw UnimplementedError("P1: conversió JSON a Entrant");
   }
+  */
 }
