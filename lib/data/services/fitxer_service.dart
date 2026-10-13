@@ -1,8 +1,9 @@
+import 'package:productes_cli/data/services/productes_service.dart';
 import 'dart:convert';
 import 'dart:io';
 
-class FitxerService {   //llamado desde ->productes_repository.dart
-
+class FitxerService implements ProductesService {   //llamado desde ->productes_repository.dart
+  @override
   Future<List<Map<String, dynamic>>> llegirProductes() async {
 
     final contingut = await File('data/entrants.json').readAsString();

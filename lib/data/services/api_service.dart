@@ -1,10 +1,11 @@
 import 'package:http/http.dart' as http;
+import 'package:productes_cli/data/services/productes_service.dart';
 import 'dart:convert';
 
-class ApiService {
+class ApiService implements ProductesService {
   final Uri uri;
   ApiService(this.uri); //constructor q no envia peticion
-
+  @override
   Future<List<Map<String, dynamic>>> llegirProductes() async {
     final client = http.Client();
 
